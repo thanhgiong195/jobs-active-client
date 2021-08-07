@@ -1,0 +1,78 @@
+{
+  "leftMenu": {
+    "admin": [
+      {
+        "route": "admin-client",
+        "title": "list_of_introduced_companies",
+        "child": [],
+        "flagChild": false,
+        "lineBottom": true
+      }
+    ],
+    "client": [
+      {
+        "route": "client-survey",
+        "title": "application_job_creation",
+        "child": [],
+        "flagChild": false
+      }
+    ]
+  },
+  "reward": {
+    "image_ads_format_valid": ["image/jpg", "image/jpeg", "image/png"],
+    "image_ads_size_valid": 4194304,
+    "destination": {
+      "ss": 0,
+      "driver": 1
+    },
+    "exchange": {
+      "status": {
+        "requested": 0,
+        "exchanged": 1
+      }
+    }
+  },
+  "normal_date_format": "YYYY-MM-DD",
+  "en_date_format_full": "YYYY/MM/DD HH:mm",
+  "jp_date_format": "YYYY年MM月DD日",
+  "jp_date_format_full": "YYYY年MM月DD日 HH:mm",
+  "jp_date_format_year_month": "YYYY年MM月",
+  "jp_date_format_year": "YYYY年",
+  "type": {
+    "station": 1,
+    "admin": 0
+  },
+  "history_driver": {
+    "activity": {
+      "upload_receipt": 1,
+      "approve_receipt": 2,
+      "exchange_reward": 3,
+      "instant_win": 4
+    }
+  },
+  "user_role": {
+    "admin": 1,
+    "approve": 2,
+    "station": 3,
+    "supplier": 4,
+    "company": 5,
+    "supplier_3th": 6
+  },
+  "survey": {
+    "input": {
+      "max_length_default": 80
+    },
+    "type": {
+      "admin": 0,
+      "station": 1
+    }
+  },
+  "categories": {
+    "message": {
+      "type": 1
+    },
+    "coupon": {
+      "type": 2
+    }
+  }
+}

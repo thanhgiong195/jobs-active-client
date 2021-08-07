@@ -1,0 +1,59 @@
+// @import '~bootstrap/scss/bootstrap-grid.scss';
+
+@mixin a-link-hover-underline-none {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+@mixin a-link-underline-none {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+@mixin transition-hover {
+  transition: all 0.3s ease;
+}
+
+@mixin transition-hover-fast {
+  transition: all 0.15s ease;
+}
+
+@mixin transition-hover-slow {
+  transition: all 0.45s ease;
+}
+
+@mixin background-center {
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+@mixin d-flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin d-flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin border {
+  border: 1px solid #ddd;
+}
+
+@mixin form-control {
+  border-radius: 0;
+}
+
+@mixin form-group {
+  margin-bottom: 25px;
+  @include form-control;
+}

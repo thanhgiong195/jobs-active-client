@@ -1,0 +1,10 @@
+@import 'variables';
+
+// Then include the following
+@import '~bootstrap/scss/bootstrap';
+
+//@import 'commons/reset';
+ @import 'commons/element-custom';
+
+// Import mixin
+@import 'mixin/main-mixin.scss';

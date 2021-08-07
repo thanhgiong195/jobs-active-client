@@ -1,0 +1,11 @@
+{
+  trailingComma: 'es5',
+  tabWidth: 2,
+  semi: false,
+  proseWrap: 'never',
+  singleQuote: true,
+  endOfLine: 'auto',
+  "[javascript]": {
+    "editor.formatOnSave": true
+  }
+}

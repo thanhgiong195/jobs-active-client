@@ -1,0 +1,21 @@
+/* custom variable element*/
+$--color-primary: $primary;
+$--color-success: $success;
+$--color-warning: $warning;
+$--color-danger: $danger;
+$--color-info: $info;
+$--size-base: 1rem;
+$--font-size-base: $--size-base;
+$--select-input-font-size: $--size-base;
+$--input-medium-font-size: $--size-base;
+$--dialog-content-font-size: $--size-base;
+$--checkbox-font-size: $--size-base;
+
+$--input-height: 55px;
+
+// ================== Don't fix ==================
+/* icon font path, required */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import '~element-ui/packages/theme-chalk/src/index';
+// ================== Don't fix ==================

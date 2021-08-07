@@ -1,0 +1,29 @@
+/* color */
+$primary: #f68121;
+$primary-pale: #f8913d;
+$secondary: #adadad;
+$success: #66da89;
+$warning: #f7941d;
+$danger: #e80000;
+$color-text-base: #00b900;
+$color-text-pale: #999;
+$info: #17a2b8;
+$light: #f8f9fa;
+$dark: #343a40;
+$box-noti-background: #dc9254b5;
+
+/* font */
+$font-family-sans-serif: 'Source Sans Pro', sans-serif;
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 1rem; // =16px
+$line-height-base: 1.25;
+
+/* breakpoint */
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+);
