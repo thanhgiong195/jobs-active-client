@@ -102,7 +102,7 @@ export default {
         })
         .catch((err) => this.$log.error(err))
     }
-    this.getListCategory()
+    this.getListJobs()
   },
   methods: {
     handleCloseForm(social) {
@@ -146,12 +146,12 @@ export default {
         })
         .catch((err) => this.$log.error(err))
     },
-    getListCategory(page) {
+    getListJobs(page) {
       this.loading = true
-      this.$services.admin.getListCategory(
+      this.$services.driver.getListJobs(
         { page },
         (response) => {
-          this.listJobs = response.data.listItem
+          this.listJobs = response
           this.loading = false
         },
         (err) => {

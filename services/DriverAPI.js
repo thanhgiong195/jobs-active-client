@@ -13,6 +13,10 @@ export default class DriverAPI extends BaseService {
     await this.post(`driver/submit-job`, param, success, error)
   }
 
+  async getListJobs(param, success, error) {
+    await this.post(`driver/list-jobs`, param, success, error)
+  }
+
   async updateLoadImageToS3(params, success, error) {
     await this.post('driver/upload-s3', params, success, error)
   }
