@@ -68,8 +68,9 @@ export default {
       loading: false,
       dialogVisible: false,
       dialogVisibleForm: false,
-      appUrl: process.env.LINE_URL_CALLBACK,
-      liffId: process.env.LIFF_APP_ID,
+      appUrl:
+        process.env.LINE_URL_CALLBACK || 'https://jobs-xyz.vercel.app/jobs',
+      liffId: process.env.LIFF_APP_ID || '1656294864-L42BqGwx',
     }
   },
   async created() {
