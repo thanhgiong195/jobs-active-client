@@ -132,11 +132,12 @@ export default {
         .then(async () => {
           if (!liff.isLoggedIn()) {
             liff.login({
-              redirectUri: `${this.appUrl}/jobs/?jobId=${job.id}`,
+              redirectUri: `${this.appUrl}/?jobId=${job.id}`,
             })
           } else {
             const profile = await liff.getProfile()
             this.lineId = profile.userId
+            this.dialogVisibleForm = true
           }
         })
         .catch((err) => this.$log.error(err))
