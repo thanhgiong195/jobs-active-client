@@ -121,6 +121,12 @@ export default {
   computed: {
     popupVisible: {
       get: function () {
+        this.info = {
+          ...this.info,
+          name: this.lineProfile.displayName || '',
+          email: this.lineProfile.email || '',
+        }
+
         return this.visible || this.innerValue
       },
       set: function (newValue) {
@@ -132,6 +138,9 @@ export default {
         this.innerValue = newValue
       },
     },
+  },
+  created() {
+    console.log(this.lineProfile)
   },
   methods: {
     submit() {
