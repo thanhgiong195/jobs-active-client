@@ -23,6 +23,15 @@
       </el-row>
       <el-row class="d-flex">
         <div class="d-flex justify-content-end w-25 pt-2 pr-5">
+          <div>{{ $t('Email') }}</div>
+          <div class="text-danger ml-2">({{ $t('required') }})</div>
+        </div>
+        <el-form-item prop="email" class="w-75">
+          <el-input v-model="info.email"></el-input>
+        </el-form-item>
+      </el-row>
+      <el-row class="d-flex">
+        <div class="d-flex justify-content-end w-25 pt-2 pr-5">
           <div>{{ $t('Phone') }}</div>
           <div class="text-danger ml-2">({{ $t('required') }})</div>
         </div>
@@ -59,8 +68,8 @@ export default {
       type: Boolean,
       default: null,
     },
-    lineId: {
-      type: [String],
+    lineProfile: {
+      type: [Object],
       default: null,
     },
     jobId: {
@@ -71,7 +80,8 @@ export default {
   data() {
     return {
       info: {
-        name: '',
+        name: this.lineProfile.displayName || '',
+        email: this.lineProfile.email || '',
         phone: '',
         description: '',
       },
@@ -82,6 +92,19 @@ export default {
             whitespace: true,
             message: 'Please insert name',
             trigger: 'blur',
+          },
+        ],
+        email: [
+          {
+            required: true,
+            whitespace: true,
+            message: 'Please insert email',
+            trigger: 'blur',
+          },
+          {
+            pattern:
+              /^[-a-z0-9~!$%^&*_=+}{\\'?]+(\.[-a-z0-9~!$%^&*_=+}{\\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/i,
+            message: 'Please enter your registered email address correctly.',
           },
         ],
         phone: [
@@ -119,7 +142,7 @@ export default {
             {
               ...this.info,
               job_id: this.jobId || this.$route.query.jobId,
-              line_id: this.lineId,
+              line_id: this.lineProfile.userId,
             },
             () => {
               this.endLoading()

@@ -203,7 +203,7 @@
   "answer_date_time": "回答日時",
   "line_id": "ラインID",
   "user_name": "ユーザー名",
-  "this_survey_has_no_answer": "この調査には答えがありません。",
+  "this_job_has_no_answer": "この調査には答えがありません。",
   "messages": {
     "alpha": "alpha error",
     "alphaNum": "alphaNum error",

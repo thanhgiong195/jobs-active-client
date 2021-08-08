@@ -10,7 +10,7 @@
 
     <FormSubmitJob
       :visible="dialogVisibleForm"
-      :line-id="lineId"
+      :line-profile="lineProfile"
       :job-id="jobId"
       @close="handleCloseForm"
     />
@@ -64,7 +64,7 @@ export default {
     return {
       listJobs: [],
       jobChoose: {},
-      lineId: '',
+      lineProfile: {},
       jobId: '',
       loading: false,
       dialogVisible: false,
@@ -92,7 +92,7 @@ export default {
         .then(async () => {
           if (liff.isLoggedIn()) {
             const profile = await liff.getProfile()
-            this.lineId = profile.userId
+            this.lineProfile = profile
             this.jobId = query.jobId || this.$route.query.jobId
           }
         })
@@ -135,7 +135,7 @@ export default {
             })
           } else {
             const profile = await liff.getProfile()
-            this.lineId = profile.userId
+            this.lineProfile = profile
             this.dialogVisibleForm = true
           }
         })

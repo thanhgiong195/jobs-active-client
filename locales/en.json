@@ -213,7 +213,7 @@
   "answer_date_time": "Date time",
   "line_id": "Line ID",
   "user_name": "Username",
-  "this_Jobs_has_no_answer": "This Jobs has no answer.",
+  "this_job_has_no_answer": "This Jobs has no answer.",
   "messages": {
     "alpha": "alpha error",
     "alphaNum": "alphaNum error",

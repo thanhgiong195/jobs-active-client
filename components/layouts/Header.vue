@@ -52,7 +52,7 @@
               </div>
             </div>
             <el-dropdown-menu slot="dropdown">
-              <el-dropdown-item
+              <!-- <el-dropdown-item
                 v-if="role === 'Service-client'"
                 command="changeLine"
                 class="avatar-dropdown-list"
@@ -65,7 +65,7 @@
                 class="avatar-dropdown-list"
               >
                 {{ $t('edit_policy') }}
-              </el-dropdown-item>
+              </el-dropdown-item> -->
               <el-dropdown-item
                 v-if="role === 'Service-client'"
                 command="changePassword"

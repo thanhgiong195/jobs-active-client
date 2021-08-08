@@ -45,6 +45,14 @@
                 {{ $t('job_creation') }}
               </el-button>
               <el-button
+                class="table-button button-download"
+                type="info"
+                size="medium"
+                @click="handleDownload(scope.row)"
+              >
+                {{ $t('View data') }}
+              </el-button>
+              <el-button
                 size="medium"
                 class="table-button button-delete"
                 @click="handleDelCategoryDialog(scope.row)"
@@ -209,7 +217,7 @@ export default {
       )
     },
     listenCsvPreview(dialogStatus, confirmStatus) {
-      this.previewCsvVisible = dialogStatus
+      this.previewCsvVisible = false
       if (confirmStatus) {
         this.downloadCsv(this.curRow)
       }

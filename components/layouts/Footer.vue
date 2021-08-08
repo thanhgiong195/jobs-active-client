@@ -2,8 +2,7 @@
   <footer class="page-footer border-top bg-white text-center">
     <div class="text-center">
       <span class="text-muted">
-        Copyright&nbsp;©&nbsp;2021&nbsp;i-Data
-        Link.&nbsp;All&nbsp;Rights&nbsp;reserved.
+        Copyright&nbsp;©&nbsp;2021&nbsp;VIETIS.&nbsp;All&nbsp;Rights&nbsp;reserved.
       </span>
     </div>
   </footer>
