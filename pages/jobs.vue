@@ -70,7 +70,6 @@ export default {
       dialogVisibleForm: false,
       appUrl:
         process.env.LINE_URL_CALLBACK || 'https://jobs-xyz.vercel.app/jobs',
-      liffId: process.env.LIFF_APP_ID || '1656294864-L42BqGwx',
     }
   },
   async created() {
@@ -90,12 +89,10 @@ export default {
 
       liff
         .init({
-          liffId: this.liffId,
+          liffId: '1656294864-L42BqGwx',
         })
         .then(async () => {
           if (liff.isLoggedIn()) {
-            const context = await liff.getContext()
-            console.log(context)
             const profile = await liff.getProfile()
             this.lineId = profile.userId
             console.log(profile)
@@ -130,7 +127,7 @@ export default {
     actionLINE(job) {
       liff
         .init({
-          liffId: this.liffId,
+          liffId: '1656294864-L42BqGwx',
         })
         .then(async () => {
           if (!liff.isLoggedIn()) {
@@ -138,8 +135,6 @@ export default {
               redirectUri: `${this.appUrl}/jobs/?jobId=${job.id}`,
             })
           } else {
-            const context = await liff.getContext()
-            console.log(context)
             const profile = await liff.getProfile()
             this.lineId = profile.userId
             console.log(profile)
