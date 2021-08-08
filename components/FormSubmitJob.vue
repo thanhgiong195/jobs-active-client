@@ -13,7 +13,7 @@
       @submit.native.prevent
     >
       <el-row class="d-flex">
-        <div class="d-flex justify-content-end w-25 pt-2 pr-5">
+        <div class="d-flex justify-content-end w-25 pt-2 pr-2">
           <div>{{ $t('Name') }}</div>
           <div class="text-danger ml-2">({{ $t('required') }})</div>
         </div>
@@ -22,7 +22,7 @@
         </el-form-item>
       </el-row>
       <el-row class="d-flex">
-        <div class="d-flex justify-content-end w-25 pt-2 pr-5">
+        <div class="d-flex justify-content-end w-25 pt-2 pr-2">
           <div>{{ $t('Email') }}</div>
           <div class="text-danger ml-2">({{ $t('required') }})</div>
         </div>
@@ -31,7 +31,7 @@
         </el-form-item>
       </el-row>
       <el-row class="d-flex">
-        <div class="d-flex justify-content-end w-25 pt-2 pr-5">
+        <div class="d-flex justify-content-end w-25 pt-2 pr-2">
           <div>{{ $t('Phone') }}</div>
           <div class="text-danger ml-2">({{ $t('required') }})</div>
         </div>
@@ -40,7 +40,7 @@
         </el-form-item>
       </el-row>
       <el-row class="d-flex">
-        <div class="d-flex justify-content-end w-25 pt-2 pr-5">
+        <div class="d-flex justify-content-end w-25 pt-2 pr-2">
           <div>{{ $t('Description') }}</div>
         </div>
         <el-form-item prop="description" class="w-75">
