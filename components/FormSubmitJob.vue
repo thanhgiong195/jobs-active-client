@@ -63,6 +63,10 @@ export default {
       type: [String],
       default: null,
     },
+    jobId: {
+      type: [String, Number],
+      default: null,
+    },
   },
   data() {
     return {
@@ -114,7 +118,7 @@ export default {
           this.$services.driver.submitJob(
             {
               ...this.info,
-              job_id: this.$route.query.jobId,
+              job_id: this.jobId,
               line_id: this.lineId,
             },
             () => {

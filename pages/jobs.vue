@@ -11,6 +11,7 @@
     <FormSubmitJob
       :visible="dialogVisibleForm"
       :line-id="lineId"
+      :job-id="jobId"
       @close="handleCloseForm"
     />
 
@@ -84,8 +85,6 @@ export default {
           '"}'
       )
       console.log('old query ')
-      console.log(query)
-      this.jobId = query.jobId
 
       liff
         .init({
@@ -95,16 +94,10 @@ export default {
           if (liff.isLoggedIn()) {
             const profile = await liff.getProfile()
             this.lineId = profile.userId
+            this.jobId = query.jobId
           }
         })
         .catch((err) => this.$log.error(err))
-
-      this.$router.push({
-        name: 'jobs',
-        query: {
-          jobId: query.jobId,
-        },
-      })
 
       this.dialogVisibleForm = true
     }
