@@ -100,6 +100,10 @@ export default {
       this.jobId = query.jobId || this.$route.query.jobId
       this.dialogVisibleForm = true
     }
+    if (this.$route.query.open == 'form' && this.$route.query.jobId) {
+      this.jobId = this.$route.query.jobId
+      this.dialogVisibleForm = true
+    }
     this.getListJobs()
   },
   methods: {
@@ -131,7 +135,7 @@ export default {
         .then(async () => {
           if (!liff.isLoggedIn()) {
             liff.login({
-              redirectUri: `${this.appUrl}/?jobId=${job.id}`,
+              redirectUri: `${this.appUrl}/?jobId=${job.id}&open=form`,
             })
           } else {
             const profile = await liff.getProfile()
