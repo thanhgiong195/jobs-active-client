@@ -74,6 +74,18 @@ export default {
     }
   },
   async created() {
+    liff
+      .init({
+        liffId: '1656294864-L42BqGwx',
+      })
+      .then(async () => {
+        if (liff.isLoggedIn()) {
+          const profile = await liff.getProfile()
+          this.lineProfile = profile
+        }
+      })
+      .catch((err) => this.$log.error(err))
+
     if (this.$route.query['liff.state']) {
       const search = this.$route.query['liff.state'].substring(1)
       const query = JSON.parse(
@@ -85,19 +97,7 @@ export default {
           '"}'
       )
 
-      liff
-        .init({
-          liffId: '1656294864-L42BqGwx',
-        })
-        .then(async () => {
-          if (liff.isLoggedIn()) {
-            const profile = await liff.getProfile()
-            this.lineProfile = profile
-            this.jobId = query.jobId || this.$route.query.jobId
-          }
-        })
-        .catch((err) => this.$log.error(err))
-
+      this.jobId = query.jobId || this.$route.query.jobId
       this.dialogVisibleForm = true
     }
     this.getListJobs()

@@ -218,6 +218,12 @@ main {
   font-weight: 700;
 }
 
+@media (max-width: 450px) {
+  .el-dialog {
+    width: calc(100% - 30px) !important;
+  }
+}
+
 .el-dialog__headerbtn {
   top: 15px;
 }
