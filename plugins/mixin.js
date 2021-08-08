@@ -470,7 +470,10 @@ Vue.mixin({
       /* eslint-enable */
     },
     getFullPathImage(image_path, base_path = '') {
-      if (!base_path) base_path = process.env.AWS_S3_URL
+      if (!base_path)
+        base_path =
+          process.env.AWS_S3_URL ||
+          'https://nichiboh-lms.s3-ap-northeast-1.amazonaws.com/'
       if (this.isEmptyCustom(image_path)) {
         return false
       }
