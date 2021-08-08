@@ -139,9 +139,6 @@ export default {
       },
     },
   },
-  created() {
-    console.log(this.lineProfile)
-  },
   methods: {
     submit() {
       this.$refs['formData'].validate((valid) => {

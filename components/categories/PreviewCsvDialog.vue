@@ -67,16 +67,16 @@
     </div>
     <div slot="footer" class="dialog-footer el-dialog--end">
       <el-button class="cancel-btn" @click="emitDialogVisible(false)">
-        {{ this.$t('cancel') }}
+        {{ $t('Close') }}
       </el-button>
-      <el-button
+      <!-- <el-button
         class="btn-create yellow"
         type="primary"
         :disabled="isEmptyCustom(surveyAnswers) ? true : false"
         @click="emitDialogVisible(false, true)"
       >
         {{ $t('download') }}
-      </el-button>
+      </el-button> -->
     </div>
   </el-dialog>
 </template>
