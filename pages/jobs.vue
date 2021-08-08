@@ -84,7 +84,6 @@ export default {
             .replace(/=/g, '":"') +
           '"}'
       )
-      console.log('old query ')
 
       liff
         .init({
@@ -94,7 +93,7 @@ export default {
           if (liff.isLoggedIn()) {
             const profile = await liff.getProfile()
             this.lineId = profile.userId
-            this.jobId = query.jobId
+            this.jobId = query.jobId || this.$route.query.jobId
           }
         })
         .catch((err) => this.$log.error(err))
