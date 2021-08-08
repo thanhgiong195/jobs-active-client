@@ -109,6 +109,13 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    babel: {
+      compact: true,
+      plugins: [
+        ['@babel/plugin-proposal-private-methods', { loose: true }],
+        ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
+      ],
+    },
     // extend(config, ctx) {
     //   // Run ESLint on save
     //   if (ctx.isDev && ctx.isClient) {
@@ -120,7 +127,6 @@ export default {
     //     })
     //   }
     // },
-    babel: { compact: true },
     filenames: {
       app: ({ isDev, isModern }) =>
         isDev
