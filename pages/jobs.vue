@@ -95,10 +95,18 @@ export default {
           if (liff.isLoggedIn()) {
             const profile = await liff.getProfile()
             this.lineId = profile.userId
-            console.log(profile)
           }
         })
         .catch((err) => this.$log.error(err))
+
+      this.$router.push({
+        name: 'jobs',
+        query: {
+          jobId: query.jobId,
+        },
+      })
+
+      this.dialogVisibleForm = true
     }
     this.getListJobs()
   },
@@ -109,7 +117,6 @@ export default {
     handleCloseSocial(social) {
       this.dialogVisible = false
       if (!social) return
-      this.dialogVisibleForm = true
       if (social == 'LINE') {
         this.actionLINE(this.jobChoose)
       }
@@ -137,7 +144,6 @@ export default {
           } else {
             const profile = await liff.getProfile()
             this.lineId = profile.userId
-            console.log(profile)
           }
         })
         .catch((err) => this.$log.error(err))
