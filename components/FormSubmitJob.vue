@@ -118,7 +118,7 @@ export default {
           this.$services.driver.submitJob(
             {
               ...this.info,
-              job_id: this.jobId,
+              job_id: this.jobId || this.$route.query.jobId,
               line_id: this.lineId,
             },
             () => {
