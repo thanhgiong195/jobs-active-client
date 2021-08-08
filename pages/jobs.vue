@@ -1,6 +1,6 @@
 <template>
   <div v-loading="loading" class="mx-3 my-4">
-    <h4 class="text-center">List jobs</h4>
+    <h4 class="text-center">NEW JOBS</h4>
 
     <DialogSubmit
       :visible="dialogVisible"
