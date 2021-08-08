@@ -1,0 +1,128 @@
+[
+  {
+    "name": "admin",
+    "path": "/admin",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\admin\\\\index.vue",
+    "chunkName": "pages/admin/index",
+    "_name": "_fbcd42a8"
+  },
+  {
+    "name": "client",
+    "path": "/client",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\client\\\\index.vue",
+    "chunkName": "pages/client/index",
+    "_name": "_addb1c24"
+  },
+  {
+    "name": "jobs",
+    "path": "/jobs",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\jobs.vue",
+    "chunkName": "pages/jobs",
+    "_name": "_0b9fa75f"
+  },
+  {
+    "name": "register",
+    "path": "/register",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\register.vue",
+    "chunkName": "pages/register",
+    "_name": "_3d74eaac"
+  },
+  {
+    "name": "admin-account",
+    "path": "/admin/account",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\admin\\\\account\\\\index.vue",
+    "chunkName": "pages/admin/account/index",
+    "_name": "_fa9686ca"
+  },
+  {
+    "name": "admin-client",
+    "path": "/admin/client",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\admin\\\\client\\\\index.vue",
+    "chunkName": "pages/admin/client/index",
+    "_name": "_51dc3081"
+  },
+  {
+    "name": "admin-login",
+    "path": "/admin/login",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\admin\\\\login.vue",
+    "chunkName": "pages/admin/login",
+    "_name": "_4bc101c3"
+  },
+  {
+    "name": "admin-survey",
+    "path": "/admin/survey",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\admin\\\\survey\\\\index.vue",
+    "chunkName": "pages/admin/survey/index",
+    "_name": "_36e8fd92"
+  },
+  {
+    "name": "client-change-line",
+    "path": "/client/change-line",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\client\\\\change-line\\\\index.vue",
+    "chunkName": "pages/client/change-line/index",
+    "_name": "_0c7a5155"
+  },
+  {
+    "name": "client-login",
+    "path": "/client/login",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\client\\\\login.vue",
+    "chunkName": "pages/client/login",
+    "_name": "_72ba1505"
+  },
+  {
+    "name": "client-password-change",
+    "path": "/client/password-change",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\client\\\\password-change\\\\index.vue",
+    "chunkName": "pages/client/password-change/index",
+    "_name": "_1b0b1784"
+  },
+  {
+    "name": "client-password-current",
+    "path": "/client/password-current",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\client\\\\password-current\\\\index.vue",
+    "chunkName": "pages/client/password-current/index",
+    "_name": "_ee116a72"
+  },
+  {
+    "name": "client-policy",
+    "path": "/client/policy",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\client\\\\policy.vue",
+    "chunkName": "pages/client/policy",
+    "_name": "_a361e074"
+  },
+  {
+    "name": "client-reset-password",
+    "path": "/client/reset-password",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\client\\\\reset-password\\\\index.vue",
+    "chunkName": "pages/client/reset-password/index",
+    "_name": "_418df916"
+  },
+  {
+    "name": "client-survey",
+    "path": "/client/survey",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\client\\\\survey\\\\index.vue",
+    "chunkName": "pages/client/survey/index",
+    "_name": "_ba78a258"
+  },
+  {
+    "name": "driver-application",
+    "path": "/driver/application",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\driver\\\\application.vue",
+    "chunkName": "pages/driver/application",
+    "_name": "_290e2daf"
+  },
+  {
+    "name": "client-survey-id-list",
+    "path": "/client/survey/:id/list",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\client\\\\survey\\\\_id\\\\list.vue",
+    "chunkName": "pages/client/survey/_id/list",
+    "_name": "_5998c85a"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "C:\\\\Users\\\\PC\\\\Desktop\\\\coding\\\\JobDemo\\\\client\\\\pages\\\\index.vue",
+    "chunkName": "pages/index",
+    "_name": "_7beb45ce"
+  }
+]

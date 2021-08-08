@@ -1,5 +1,8 @@
 /node_modules
 
+.nuxtjs/
+disk/
+
 .env
 .phpunit.result.cache
 package-lock.json
