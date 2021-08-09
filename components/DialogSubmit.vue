@@ -16,7 +16,12 @@
         </el-button>
       </div>
       <div class="mt-3">
-        <el-button class="w-100" type="info" @click="usingFacebook()">
+        <el-button
+          class="w-100"
+          type="info"
+          :disabled="true"
+          @click="usingFacebook()"
+        >
           Using Facebook
         </el-button>
       </div>
