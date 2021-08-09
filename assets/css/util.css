@@ -222,6 +222,9 @@ main {
   .el-dialog {
     width: calc(100% - 30px) !important;
   }
+  .el-dialog__body {
+    padding: 30px 15px !important;
+  }
 }
 
 .el-dialog__headerbtn {
