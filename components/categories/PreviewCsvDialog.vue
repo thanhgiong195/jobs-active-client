@@ -50,9 +50,9 @@
                   class="table-button button-info"
                   type="info"
                   size="medium"
-                  @click="sendMessage(scope.row)"
+                  @click="openBoxChat()"
                 >
-                  {{ $t('Reply') }}
+                  {{ $t('Chat') }}
                 </el-button>
               </div>
             </div>
@@ -137,6 +137,9 @@ export default {
     },
     emitDialogVisible(dialogStatus, confirmStatus = false) {
       this.$emit('listenCsvPreview', dialogStatus, confirmStatus)
+    },
+    openBoxChat() {
+      this.$emit('openBoxChat')
     },
   },
 }

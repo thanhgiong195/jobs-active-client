@@ -121,8 +121,33 @@
         :survey-answers="surveyAnswers"
         :preview-survey="previewSurvey"
         @listenCsvPreview="listenCsvPreview"
+        @openBoxChat="openBoxChat"
       />
     </section>
+
+    <el-dialog
+      title="Chat"
+      class="chat"
+      :visible.sync="visibleBoxChat"
+      width="450px"
+    >
+      <div>
+        <p class="client chat-content">面談は明日にお願いします。</p>
+        <p class="user chat-content">了解いたしました。</p>
+        <p class="client chat-content">場所と担当は後で連絡します</p>
+      </div>
+      <el-input
+        v-model="textChating"
+        class="mt-4"
+        placeholder="Enter text chatting..."
+        type="text"
+      >
+        <el-button slot="append" icon="el-icon-s-promotion"></el-button>
+      </el-input>
+      <span slot="footer" class="dialog-footer">
+        <el-button @click="closeBoxChatting">Close</el-button>
+      </span>
+    </el-dialog>
   </div>
 </template>
 
@@ -155,10 +180,12 @@ export default {
     return {
       loading: false,
       flatCreate: true,
+      textChating: '',
       categories: {},
       categoryDetail: {},
       previewSurvey: [],
       previewVisible: false,
+      visibleBoxChat: false,
       tableData: [],
       dialogVisible: false,
       totalPage: '',
@@ -189,6 +216,13 @@ export default {
     this.getListCategory(this.page)
   },
   methods: {
+    closeBoxChatting() {
+      this.visibleBoxChat = false
+      this.textChating = ''
+    },
+    openBoxChat() {
+      this.visibleBoxChat = true
+    },
     handlePreviewClose() {
       this.previewSurvey = []
       this.categoryDetail = {}
@@ -425,6 +459,25 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.chat {
+  .chat-content {
+    width: 80%;
+    border: 2px solid #2557a4;
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: white;
+
+    &.user {
+      margin-left: 20%;
+      text-align: right;
+      background-color: #50aa5f;
+    }
+
+    &.client {
+      background-color: #3a6ebf;
+    }
+  }
+}
 .el-table tr th {
   background-color: #f5f7fa;
 }

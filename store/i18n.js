@@ -1,6 +1,6 @@
 export const state = () => ({
   locales: ['en', 'jp'],
-  locale: localStorage.getItem('lang') || 'en',
+  locale: 'en',
 })
 
 export const mutations = {

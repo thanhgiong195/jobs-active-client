@@ -82,7 +82,7 @@
             </el-dropdown-menu>
           </el-dropdown>
         </el-col>
-        <el-col>
+        <el-col hidden>
           <el-dropdown
             class="locale-dropdown"
             size="medium"
