@@ -114,6 +114,7 @@
         @close="handlePreviewClose()"
       />
     </section>
+
     <section>
       <PreviewCsvDialog
         :preview-visible="previewCsvVisible"
