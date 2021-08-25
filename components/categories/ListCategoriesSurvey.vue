@@ -227,18 +227,17 @@ export default {
     },
   },
   mounted() {
-    const pusher = new Pusher(process.env.PURSHER_KEY, {
-      cluster: process.env.PURSHER_CLUSTER,
+    const pusher = new Pusher('a06d383acc8ffdb2d88c', {
+      cluster: 'ap3',
     })
 
-    const channel = pusher.subscribe(process.env.PURSHER_APP_NAME)
+    const channel = pusher.subscribe('thanhgiongdev')
 
     channel.bind('App\\Events\\MessageSent', (data) => {
       const message = data.message.data
-
       if (
         message.line_id === this.chattingActive.line_id &&
-        message.job_id === this.chattingActive.job_id
+        message.job_id == this.chattingActive.job_id
       ) {
         this.messageChat.push(message)
         setTimeout(() => {
