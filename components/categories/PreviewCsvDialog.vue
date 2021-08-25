@@ -50,7 +50,7 @@
                   class="table-button button-info"
                   type="info"
                   size="medium"
-                  @click="openBoxChat()"
+                  @click="openBoxChat(scope.row)"
                 >
                   {{ $t('Chat') }}
                 </el-button>
@@ -138,8 +138,8 @@ export default {
     emitDialogVisible(dialogStatus, confirmStatus = false) {
       this.$emit('listenCsvPreview', dialogStatus, confirmStatus)
     },
-    openBoxChat() {
-      this.$emit('openBoxChat')
+    openBoxChat(data) {
+      this.$emit('openBoxChat', data)
     },
   },
 }

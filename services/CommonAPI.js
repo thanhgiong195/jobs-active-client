@@ -128,4 +128,16 @@ export default class CommonAPI extends BaseService {
   async getAnswerData(id, success, error) {
     await this.get(`common/survey/${id}/get-answer-data`, success, error)
   }
+
+  async chatting(params, success, error) {
+    await this.post('station/chatting', params, success, error)
+  }
+
+  async chattingHistory(params, success, error) {
+    await this.get(
+      'station/history-chatting?' + this.urlParse(params),
+      success,
+      error
+    )
+  }
 }

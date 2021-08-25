@@ -132,10 +132,15 @@
       :visible.sync="visibleBoxChat"
       width="450px"
     >
-      <div>
-        <p class="client chat-content">面談は明日にお願いします。</p>
-        <p class="user chat-content">了解いたしました。</p>
-        <p class="client chat-content">場所と担当は後で連絡します</p>
+      <div id="listChatting" style="height: 300px; overflow: auto">
+        <p
+          v-for="(item, index) in messageChat"
+          :key="index"
+          class="chat-content"
+          :class="item.type === 2 ? 'client' : 'user'"
+        >
+          {{ item.content }}
+        </p>
       </div>
       <el-input
         v-model="textChating"
@@ -143,7 +148,11 @@
         placeholder="Enter text chatting..."
         type="text"
       >
-        <el-button slot="append" icon="el-icon-s-promotion"></el-button>
+        <el-button
+          slot="append"
+          icon="el-icon-s-promotion"
+          @click="chatting()"
+        ></el-button>
       </el-input>
       <span slot="footer" class="dialog-footer">
         <el-button @click="closeBoxChatting">Close</el-button>
@@ -153,6 +162,8 @@
 </template>
 
 <script>
+import Pusher from 'pusher-js'
+
 import FormCategory from '@/components/categories/FormCategory'
 import PreviewCsvDialog from '@/components/categories/PreviewCsvDialog'
 import SimplePagination from '@/components/pagination/SimplePagination'
@@ -206,6 +217,8 @@ export default {
       curRow: [],
       previewCsvVisible: false,
       surveyAnswers: [],
+      messageChat: [],
+      chattingActive: {},
     }
   },
   computed: {
@@ -213,16 +226,71 @@ export default {
       return this.$authInfo.getData('station_profile')
     },
   },
+  mounted() {
+    const pusher = new Pusher(process.env.PURSHER_KEY, {
+      cluster: process.env.PURSHER_CLUSTER,
+    })
+
+    const channel = pusher.subscribe(process.env.PURSHER_APP_NAME)
+
+    channel.bind('App\\Events\\MessageSent', (data) => {
+      const message = data.message.data
+
+      if (
+        message.line_id === this.chattingActive.line_id &&
+        message.job_id === this.chattingActive.job_id
+      ) {
+        this.messageChat.push(message)
+        setTimeout(() => {
+          this.scrollToEnd()
+        }, 100)
+      }
+    })
+  },
   created() {
     this.getListCategory(this.page)
   },
   methods: {
+    scrollToEnd() {
+      const list = document.getElementById('listChatting')
+      list.scrollTop = list.scrollHeight
+    },
     closeBoxChatting() {
       this.visibleBoxChat = false
       this.textChating = ''
     },
-    openBoxChat() {
+    async openBoxChat(data) {
+      this.chattingActive = data
+      this.messageChat = []
+      await this.getHistoryChatting(data)
       this.visibleBoxChat = true
+    },
+    async getHistoryChatting(data) {
+      await this.$services.common.chattingHistory(
+        data,
+        (response) => {
+          this.messageChat = response
+          setTimeout(() => {
+            this.scrollToEnd()
+          }, 100)
+        },
+        (err) => {
+          this.$log.error(err)
+        }
+      )
+    },
+    chatting() {
+      if (!this.textChating) return
+
+      this.$services.common.chatting(
+        { ...this.chattingActive, content: this.textChating, type: 1 },
+        () => {
+          this.textChating = ''
+        },
+        (err) => {
+          this.$log.error(err)
+        }
+      )
     },
     handlePreviewClose() {
       this.previewSurvey = []

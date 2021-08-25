@@ -1,16 +1,16 @@
 <template>
-  <div class="heading">
-    <EditInfo />
+  <div class="heading" style="padding: 10px">
+    <Chatting />
   </div>
 </template>
 
 <script>
 /* eslint-disable no-undef */
-import EditInfo from '@/components/liffApp/EditInfo'
+import Chatting from '@/components/liffApp/Chatting'
 
 export default {
   components: {
-    EditInfo,
+    Chatting,
   },
   created() {
     if (this.$route.query['liff.state']) {
