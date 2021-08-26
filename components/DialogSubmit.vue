@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    title="Submit"
+    title="応募"
     :visible.sync="popupVisible"
     :close-on-click-modal="true"
     width="300px"
@@ -12,7 +12,7 @@
           type="primary"
           @click="usingLine()"
         >
-          Using LINE
+          LINE応募する
         </el-button>
       </div>
       <div class="mt-3">
@@ -22,7 +22,7 @@
           :disabled="true"
           @click="usingFacebook()"
         >
-          Using Facebook
+          WEBから応募
         </el-button>
       </div>
     </div>

@@ -44,7 +44,7 @@
               class="btn btn--block card__btn"
               @click="chooseSocialSubmit(job)"
             >
-              Recruitment
+              応募する
             </button>
           </div>
         </div>
