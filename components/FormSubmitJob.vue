@@ -1,6 +1,6 @@
 <template>
   <el-dialog
-    title="Insert info"
+    title="応募情報"
     :visible.sync="popupVisible"
     :close-on-click-modal="false"
     width="600"
@@ -14,7 +14,7 @@
     >
       <el-row class="d-flex">
         <div class="d-flex justify-content-end w-25 pt-2 pr-2">
-          <div>{{ $t('Name') }}</div>
+          <div>氏名</div>
           <div class="text-danger ml-2">({{ $t('required') }})</div>
         </div>
         <el-form-item prop="name" class="w-75">
@@ -23,7 +23,7 @@
       </el-row>
       <el-row class="d-flex">
         <div class="d-flex justify-content-end w-25 pt-2 pr-2">
-          <div>{{ $t('Email') }}</div>
+          <div>メールアドレス</div>
           <div class="text-danger ml-2">({{ $t('required') }})</div>
         </div>
         <el-form-item prop="email" class="w-75">
@@ -32,7 +32,7 @@
       </el-row>
       <el-row class="d-flex">
         <div class="d-flex justify-content-end w-25 pt-2 pr-2">
-          <div>{{ $t('Phone') }}</div>
+          <div>電話番号</div>
           <div class="text-danger ml-2">({{ $t('required') }})</div>
         </div>
         <el-form-item prop="phone" class="w-75">
@@ -41,7 +41,7 @@
       </el-row>
       <el-row class="d-flex">
         <div class="d-flex justify-content-end w-25 pt-2 pr-2">
-          <div>{{ $t('Description') }}</div>
+          <div>相談内容</div>
         </div>
         <el-form-item prop="description" class="w-75">
           <el-input v-model="info.description" type="textarea" rows="4" />
@@ -55,7 +55,7 @@
         type="success"
         @click="submit()"
       >
-        {{ $t('Send') }}
+        送信
       </el-button>
     </div>
   </el-dialog>
