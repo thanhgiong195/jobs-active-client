@@ -239,10 +239,12 @@ export default {
         message.line_id === this.chattingActive.line_id &&
         message.job_id == this.chattingActive.job_id
       ) {
-        this.messageChat.push(message)
-        setTimeout(() => {
-          this.scrollToEnd()
-        }, 100)
+        if (message.type == 2) {
+          this.messageChat.push(message)
+          setTimeout(() => {
+            this.scrollToEnd()
+          }, 100)
+        }
       }
     })
   },
@@ -283,8 +285,12 @@ export default {
 
       this.$services.common.chatting(
         { ...this.chattingActive, content: this.textChating, type: 1 },
-        () => {
+        (message) => {
           this.textChating = ''
+          this.messageChat.push(message)
+          setTimeout(() => {
+            this.scrollToEnd()
+          }, 100)
         },
         (err) => {
           this.$log.error(err)
