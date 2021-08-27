@@ -1,6 +1,6 @@
 <template>
   <div class="chat">
-    <h4 class="title">JobID: {{ chattingActive.job_id }}</h4>
+    <h4 class="title">Chatting</h4>
     <div id="listChatting">
       <p
         v-for="(item, index) in messageChat"
@@ -29,7 +29,6 @@
 <script>
 import Pusher from 'pusher-js'
 
-import Constant from '@/constant.json'
 export default {
   /* eslint-disable no-undef */
   components: {},
@@ -38,8 +37,6 @@ export default {
       userId: '',
       textChating: '',
       messageChat: [],
-      serviceOff: false,
-      constant: Constant,
     }
   },
   computed: {
