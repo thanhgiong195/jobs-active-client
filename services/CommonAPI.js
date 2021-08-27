@@ -140,4 +140,12 @@ export default class CommonAPI extends BaseService {
       error
     )
   }
+
+  async getLineConfig(success, error) {
+    await this.get('common/line-config/get', success, error)
+  }
+
+  async changeLineConfig(params, success, error) {
+    await this.post('common/line-config/update', params, success, error)
+  }
 }

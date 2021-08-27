@@ -52,14 +52,14 @@
               </div>
             </div>
             <el-dropdown-menu slot="dropdown">
-              <!-- <el-dropdown-item
-                v-if="role === 'Service-client'"
+              <el-dropdown-item
+                v-if="role === 'Super Admin'"
                 command="changeLine"
                 class="avatar-dropdown-list"
               >
                 {{ $t('edit_line_channel') }}
               </el-dropdown-item>
-              <el-dropdown-item
+              <!-- <el-dropdown-item
                 v-if="role === 'Service-client'"
                 command="changePolicy"
                 class="avatar-dropdown-list"
@@ -179,7 +179,7 @@ export default {
       }
       if (command == 'changeLine') {
         this.$router.push({
-          name: 'client-change-line',
+          name: 'admin-change-line',
         })
       }
       if (command == 'changePolicy') {

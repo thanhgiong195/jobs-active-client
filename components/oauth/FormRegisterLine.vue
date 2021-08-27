@@ -116,7 +116,7 @@ export default {
   methods: {
     getLineConfig() {
       this.startLoading()
-      this.$services.station.getStationInfo(
+      this.$services.common.getLineConfig(
         (res) => {
           this.endLoading()
           this.ssProfile = {
@@ -132,17 +132,11 @@ export default {
         }
       )
     },
-    diffValue(value1, value2) {
-      const val1 = JSON.stringify(value1)
-      const val2 = JSON.stringify(value2)
-
-      return val1 !== val2
-    },
     updateData() {
       this.$refs['UpdateLineConfig'].validate((valid) => {
         if (valid) {
           this.startLoading()
-          this.$services.station.registerLine(
+          this.$services.common.changeLineConfig(
             this.ssProfile,
             () => {
               this.endLoading()
@@ -151,7 +145,7 @@ export default {
                 type: 'success',
               }).then(() => {
                 this.$router.push({
-                  name: 'client-survey',
+                  name: 'admin-client',
                 })
               })
             },
