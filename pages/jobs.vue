@@ -76,7 +76,7 @@ export default {
   async created() {
     liff
       .init({
-        liffId: '1656294864-L42BqGwx',
+        liffId: '1656390807-p1mg6oO0',
       })
       .then(async () => {
         if (liff.isLoggedIn()) {
@@ -130,7 +130,7 @@ export default {
     actionLINE(job) {
       liff
         .init({
-          liffId: '1656294864-L42BqGwx',
+          liffId: '1656390807-p1mg6oO0',
         })
         .then(async () => {
           if (!liff.isLoggedIn()) {
