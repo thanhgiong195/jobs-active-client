@@ -103,6 +103,10 @@ export default {
     if (this.$route.query.open == 'form' && this.$route.query.jobId) {
       this.jobId = this.$route.query.jobId
       this.dialogVisibleForm = true
+    } else {
+      this.$router.push({
+        name: 'jobs',
+      })
     }
     this.getListJobs()
   },

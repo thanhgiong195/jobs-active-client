@@ -65,11 +65,9 @@ export default {
   },
   methods: {
     usingLine() {
-      console.log('LINE')
       this.$emit('close', 'LINE')
     },
     usingFacebook() {
-      console.log('Facebook')
       this.$emit('close', 'Facebook')
     },
   },
