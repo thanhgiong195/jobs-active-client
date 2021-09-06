@@ -109,6 +109,10 @@ export default {
   methods: {
     handleCloseForm(social) {
       this.dialogVisibleForm = false
+      this.jobChoose = {}
+      this.$router.push({
+        name: 'jobs',
+      })
     },
     handleCloseSocial(social) {
       this.dialogVisible = false
