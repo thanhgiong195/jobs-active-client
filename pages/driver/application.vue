@@ -12,7 +12,17 @@ export default {
   components: {
     Chatting,
   },
-  created() {
+  data() {
+    return {
+      ssProfile: {
+        line_token: '',
+        line_channel_key: '',
+        liff_app_id: '',
+      },
+    }
+  },
+  async created() {
+    await this.getLineConfig()
     if (this.$route.query['liff.state']) {
       const search = this.$route.query['liff.state'].substring(1)
       const query = JSON.parse(
@@ -29,6 +39,23 @@ export default {
     }
   },
   methods: {
+    getLineConfig() {
+      this.startLoading()
+      this.$services.common.getLineConfig(
+        (res) => {
+          this.endLoading()
+          this.ssProfile = {
+            line_token: res.line_token || '',
+            line_channel_key: res.line_channel_key || '',
+            liff_app_id: res.liff_app_id || '',
+          }
+        },
+        (err) => {
+          this.$log.error(err)
+          this.endLoading()
+        }
+      )
+    },
     liffInit(query) {
       liff
         .init({

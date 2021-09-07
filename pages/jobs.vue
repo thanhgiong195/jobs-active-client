@@ -74,7 +74,7 @@ export default {
     }
   },
   async created() {
-    liff
+    await liff
       .init({
         liffId: '1656390807-p1mg6oO0',
       })
